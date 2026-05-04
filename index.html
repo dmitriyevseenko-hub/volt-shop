@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0B0B12">
+  <title>Volt — Магазин гаджетов</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="appHeader">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-bolt">⚡</span>
+        <span class="logo-name">VOLT</span>
+      </div>
+      <button class="icon-btn" id="btnSearch" aria-label="Поиск">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+    </div>
+    <div class="search-bar" id="searchBar">
+      <svg class="sb-icon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="search" id="searchInput" class="sb-input" placeholder="Поиск гаджетов...">
+      <button class="sb-clear" id="btnSearchClear">✕</button>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="content" class="content"></main>
+
+  <!-- ===== BOTTOM NAV ===== -->
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-screen="home">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+      <span>Главная</span>
+    </button>
+    <button class="nav-btn" data-screen="catalog">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="7" height="7" rx="1"/>
+        <rect x="14" y="3" width="7" height="7" rx="1"/>
+        <rect x="14" y="14" width="7" height="7" rx="1"/>
+        <rect x="3" y="14" width="7" height="7" rx="1"/>
+      </svg>
+      <span>Каталог</span>
+    </button>
+    <button class="nav-btn" data-screen="cart" id="navCart">
+      <span class="nav-ico-wrap">
+        <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="nav-badge" id="cartBadge"></span>
+      </span>
+      <span>Корзина</span>
+    </button>
+    <button class="nav-btn" data-screen="favorites">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+      </svg>
+      <span>Избранное</span>
+    </button>
+  </nav>
+
+  <!-- ===== PRODUCT SHEET ===== -->
+  <div class="sheet-backdrop" id="sheetBackdrop"></div>
+  <div class="product-sheet" id="productSheet">
+    <div class="sheet-drag"></div>
+    <div class="sheet-body" id="sheetBody"></div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
