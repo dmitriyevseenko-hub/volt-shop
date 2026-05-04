@@ -31,33 +31,35 @@ const CAT_GRAD = {
   sale:        'linear-gradient(145deg,#1C0505,#7F1D1D)',
 };
 
+const U = id => `https://images.unsplash.com/photo-${id}?w=400&h=400&fit=crop&q=80&auto=format`;
+
 const PRODUCTS = [
   // Смартфоны
-  { id:1,  cat:'phones',      icon:'📱', name:'iPhone 15 Pro',             desc:'A17 Pro · 48 Мп · USB-C · Titanium · IP68',      price:89990, oldPrice:99990, badge:'hit',  rating:4.9, reviews:234 },
-  { id:2,  cat:'phones',      icon:'📱', name:'Samsung Galaxy S24 Ultra',  desc:'Snapdragon 8 Gen 3 · 200 Мп · S Pen · AI-функции', price:109990,             badge:'new',  rating:4.8, reviews:187 },
-  { id:3,  cat:'phones',      icon:'📱', name:'Xiaomi 14 Pro',             desc:'Snapdragon 8 Gen 3 · Leica · 120W · 50 Мп',       price:74990, oldPrice:84990,             rating:4.7, reviews:156 },
-  { id:4,  cat:'phones',      icon:'📱', name:'Google Pixel 8 Pro',        desc:'Tensor G3 · AI-камера · Android 14 · 7 лет поддержки', price:79990,          badge:'hit',  rating:4.8, reviews:143 },
-  { id:5,  cat:'phones',      icon:'📱', name:'OnePlus 12 5G',             desc:'Snapdragon 8 Gen 3 · Hasselblad · 100W · 5400 мА·ч', price:59990, oldPrice:69990, rating:4.6, reviews:98 },
+  { id:1,  cat:'phones',      icon:'📱', img:U('1592750475338-74b7b21085ab'), name:'iPhone 15 Pro',             desc:'A17 Pro · 48 Мп · USB-C · Titanium · IP68',           price:89990, oldPrice:99990, badge:'hit',  rating:4.9, reviews:234 },
+  { id:2,  cat:'phones',      icon:'📱', img:U('1610945264803-c22b62831e6b'), name:'Samsung Galaxy S24 Ultra',  desc:'Snapdragon 8 Gen 3 · 200 Мп · S Pen · AI-функции',    price:109990,              badge:'new',  rating:4.8, reviews:187 },
+  { id:3,  cat:'phones',      icon:'📱', img:U('1598327105666-5b89351aff97'), name:'Xiaomi 14 Pro',             desc:'Snapdragon 8 Gen 3 · Leica · 120W · 50 Мп',           price:74990, oldPrice:84990,              rating:4.7, reviews:156 },
+  { id:4,  cat:'phones',      icon:'📱', img:U('1511707171634-5f897ff02aa9'), name:'Google Pixel 8 Pro',        desc:'Tensor G3 · AI-камера · Android 14 · 7 лет поддержки',price:79990,               badge:'hit',  rating:4.8, reviews:143 },
+  { id:5,  cat:'phones',      icon:'📱', img:U('1580910051074-3eb694886505'), name:'OnePlus 12 5G',             desc:'Snapdragon 8 Gen 3 · Hasselblad · 100W · 5400 мА·ч',  price:59990, oldPrice:69990,              rating:4.6, reviews:98  },
   // Наушники
-  { id:6,  cat:'audio',       icon:'🎧', name:'AirPods Pro 2',             desc:'ANC нового поколения · Spatial Audio · MagSafe · до 30ч', price:19990, badge:'hit', rating:4.9, reviews:312 },
-  { id:7,  cat:'audio',       icon:'🎧', name:'Sony WH-1000XM5',           desc:'Лучший ANC · LDAC Hi-Res · 30 ч · Auto Pause',   price:27990, oldPrice:34990,             rating:4.9, reviews:267 },
-  { id:8,  cat:'audio',       icon:'🎧', name:'Samsung Galaxy Buds3 Pro',  desc:'ANC · 360° Audio · IP57 · до 30 ч с кейсом',     price:12490,              badge:'new',  rating:4.6, reviews:89  },
-  { id:9,  cat:'audio',       icon:'🎧', name:'Bose QuietComfort 45',      desc:'Legendary ANC · TriPort · 24 ч · USB-C · складные', price:24990,            rating:4.8, reviews:201 },
-  { id:10, cat:'audio',       icon:'🎧', name:'Nothing Ear (2)',            desc:'Hi-Res Audio · 11.6 мм · Dual ANC · до 36 ч',    price:9990,                             rating:4.5, reviews:134 },
+  { id:6,  cat:'audio',       icon:'🎧', img:U('1588423771073-b8903fead714'), name:'AirPods Pro 2',             desc:'ANC нового поколения · Spatial Audio · MagSafe · до 30ч', price:19990, badge:'hit', rating:4.9, reviews:312 },
+  { id:7,  cat:'audio',       icon:'🎧', img:U('1505740420928-5e560c06d30e'), name:'Sony WH-1000XM5',           desc:'Лучший ANC · LDAC Hi-Res · 30 ч · Auto Pause',        price:27990, oldPrice:34990,              rating:4.9, reviews:267 },
+  { id:8,  cat:'audio',       icon:'🎧', img:U('1590658268037-4db0c37d0a5c'), name:'Samsung Galaxy Buds3 Pro',  desc:'ANC · 360° Audio · IP57 · до 30 ч с кейсом',         price:12490,               badge:'new',  rating:4.6, reviews:89  },
+  { id:9,  cat:'audio',       icon:'🎧', img:U('1484704849700-f032a568e944'), name:'Bose QuietComfort 45',      desc:'Legendary ANC · TriPort · 24 ч · USB-C · складные',  price:24990,               rating:4.8, reviews:201 },
+  { id:10, cat:'audio',       icon:'🎧', img:U('1572536147248-ac59a8abfa4b'), name:'Nothing Ear (2)',            desc:'Hi-Res Audio · 11.6 мм · Dual ANC · до 36 ч',        price:9990,                rating:4.5, reviews:134 },
   // Умный дом
-  { id:11, cat:'smarthome',   icon:'🔊', name:'Яндекс Станция Макс 2',    desc:'Алиса 2.0 · Zigbee · HDMI · 65W · Умный дом',    price:14990,              badge:'hit',  rating:4.8, reviews:178 },
-  { id:12, cat:'smarthome',   icon:'🤖', name:'Xiaomi Robot Vacuum X20+',  desc:'4000 Па · Лидар · Автоочистка базы · MOP',        price:34990, oldPrice:44990,             rating:4.7, reviews:95  },
-  { id:13, cat:'smarthome',   icon:'🔊', name:'Apple HomePod mini',        desc:'360° аудио · Siri · Thread · Matter · голосовые сценарии', price:11990,      rating:4.6, reviews:123 },
-  { id:14, cat:'smarthome',   icon:'💡', name:'Govee LED Strip 10 м',      desc:'RGBIC · Matter · App Control · 16 млн цветов',   price:3490,               badge:'new',  rating:4.5, reviews:211 },
+  { id:11, cat:'smarthome',   icon:'🔊', img:U('1558618666-fcd25c85cd64'),    name:'Яндекс Станция Макс 2',    desc:'Алиса 2.0 · Zigbee · HDMI · 65W · Умный дом',        price:14990,               badge:'hit',  rating:4.8, reviews:178 },
+  { id:12, cat:'smarthome',   icon:'🤖', img:U('1567538096630-e0c55bd6374c'), name:'Xiaomi Robot Vacuum X20+',  desc:'4000 Па · Лидар · Автоочистка базы · MOP',           price:34990, oldPrice:44990,              rating:4.7, reviews:95  },
+  { id:13, cat:'smarthome',   icon:'🔊', img:U('1519558260268-cde7e03a0152'), name:'Apple HomePod mini',        desc:'360° аудио · Siri · Thread · Matter · голосовые сценарии', price:11990, rating:4.6, reviews:123 },
+  { id:14, cat:'smarthome',   icon:'💡', img:U('1614624532983-4ce03382d63d'), name:'Govee LED Strip 10 м',      desc:'RGBIC · Matter · App Control · 16 млн цветов',       price:3490,                badge:'new',  rating:4.5, reviews:211 },
   // Аксессуары
-  { id:15, cat:'accessories', icon:'⌚', name:'Apple Watch Series 9',      desc:'S9 SiP · Always-On · ЭКГ · Crash Detection · 18ч', price:34990,            badge:'hit',  rating:4.9, reviews:289 },
-  { id:16, cat:'accessories', icon:'⌚', name:'Samsung Galaxy Watch 6 Classic', desc:'Поворотный безель · ЭКГ · 40 ч · Wear OS 4', price:27990,             rating:4.7, reviews:167 },
-  { id:17, cat:'accessories', icon:'🔋', name:'Anker Power Bank 26800',    desc:'65W PD · 3 порта · PowerIQ 3.0 · авиакласс',    price:5490,               badge:'hit',  rating:4.8, reviews:445 },
-  { id:18, cat:'accessories', icon:'⚡', name:'MagSafe Duo Charger',       desc:'iPhone + Watch · 15W MagSafe · оригинал Apple',  price:7990,                             rating:4.6, reviews:98  },
+  { id:15, cat:'accessories', icon:'⌚', img:U('1579586337278-3befd40fd17a'), name:'Apple Watch Series 9',      desc:'S9 SiP · Always-On · ЭКГ · Crash Detection · 18ч',   price:34990,               badge:'hit',  rating:4.9, reviews:289 },
+  { id:16, cat:'accessories', icon:'⌚', img:U('1546868871-7041f2a55e12'),    name:'Samsung Galaxy Watch 6 Classic', desc:'Поворотный безель · ЭКГ · 40 ч · Wear OS 4',   price:27990,               rating:4.7, reviews:167 },
+  { id:17, cat:'accessories', icon:'🔋', img:U('1609091839311-d5365f9ff1c5'), name:'Anker Power Bank 26800',    desc:'65W PD · 3 порта · PowerIQ 3.0 · авиакласс',        price:5490,                badge:'hit',  rating:4.8, reviews:445 },
+  { id:18, cat:'accessories', icon:'⚡', img:U('1633467067038-e2a59e57efcb'), name:'MagSafe Duo Charger',       desc:'iPhone + Watch · 15W MagSafe · оригинал Apple',      price:7990,                rating:4.6, reviews:98  },
   // Уценка
-  { id:19, cat:'sale',        icon:'📱', name:'Samsung Galaxy A55',        desc:'Вскрытая упаковка · гарантия 1 год · 256GB',     price:19990, oldPrice:29990, badge:'sale', rating:4.4, reviews:56 },
-  { id:20, cat:'sale',        icon:'🔊', name:'JBL Charge 5',              desc:'Витринный образец · IP67 · 20 ч · гарантия 6 мес', price:8990, oldPrice:14990, badge:'sale', rating:4.5, reviews:72 },
-  { id:21, cat:'sale',        icon:'📱', name:'Redmi Note 13 Pro',         desc:'Уценка: царапина корпуса · 256GB · 5G · гарантия', price:16990, oldPrice:24990, badge:'sale', rating:4.3, reviews:43 },
+  { id:19, cat:'sale',        icon:'📱', img:U('1511707171634-5f897ff02aa9'), name:'Samsung Galaxy A55',        desc:'Вскрытая упаковка · гарантия 1 год · 256GB',         price:19990, oldPrice:29990, badge:'sale', rating:4.4, reviews:56 },
+  { id:20, cat:'sale',        icon:'🔊', img:U('1608043152269-423dbba4e7e1'), name:'JBL Charge 5',              desc:'Витринный образец · IP67 · 20 ч · гарантия 6 мес',   price:8990,  oldPrice:14990, badge:'sale', rating:4.5, reviews:72 },
+  { id:21, cat:'sale',        icon:'📱', img:U('1598327105666-5b89351aff97'), name:'Redmi Note 13 Pro',         desc:'Уценка: царапина корпуса · 256GB · 5G · гарантия',   price:16990, oldPrice:24990, badge:'sale', rating:4.3, reviews:43 },
 ];
 
 const BANNERS = [
@@ -171,7 +173,9 @@ function cardHTML(p, inRow = false) {
       <div class="card-art" style="background:${CAT_GRAD[p.cat]}">
         ${badge ? `<span class="${badge.cls}">${badge.lbl}</span>` : ''}
         <button class="card-fav${isFav ? ' faved' : ''}" data-fav="${p.id}">${isFav ? '❤️' : '🤍'}</button>
-        <span>${p.icon}</span>
+        ${p.img
+          ? `<img class="card-img" src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">`
+          : `<span class="card-ico">${p.icon}</span>`}
       </div>
       <div class="card-info">
         <div class="card-name">${p.name}</div>
@@ -356,7 +360,9 @@ function openSheet(id) {
 
   document.getElementById('sheetBody').innerHTML = `
     <div class="sheet-art" style="background:${CAT_GRAD[p.cat]}">
-      ${p.icon}
+      ${p.img
+        ? `<img class="sheet-img" src="${p.img}" alt="${p.name}" onerror="this.style.display='none'">`
+        : `<span>${p.icon}</span>`}
       <button class="sheet-fav${isFav ? ' faved' : ''}" id="sheetFavBtn">${isFav ? '❤️' : '🤍'}</button>
     </div>
     <span class="sheet-cat">${CAT_NAMES[p.cat]}</span>
